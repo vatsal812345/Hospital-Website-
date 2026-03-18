@@ -17,7 +17,8 @@ const Services = () => {
   return (
     <div className="flex flex-col">
       {/* Premium Header */}
-      <section className="relative pt-40 pb-32 overflow-hidden bg-accent-light">
+      <section className="relative pt-25 pb-15 overflow-hidden bg-accent-light">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f79898] via-[#F0F7FF] to-[#f79898]" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--primary-light)_0%,_transparent_70%)] opacity-5" />
         <div className="section-container relative z-10 text-center space-y-6">
           <motion.div
@@ -30,9 +31,9 @@ const Services = () => {
           <motion.h1 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-5xl md:text-8xl font-black text-slate-900 leading-none"
+            className="text-4xl md:text-7xl font-black text-slate-900 leading-none"
           >
-            Specialized <span className="text-primary italic">Services</span>
+            Specialized <span className="text-primary ">Services</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }}
@@ -65,8 +66,18 @@ const Services = () => {
               {/* Visual Side */}
               <div className="w-full lg:w-1/2 aspect-video bg-white rounded-[3rem] shadow-2xl overflow-hidden group relative border border-gray-100">
                 <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/0 transition-colors duration-500" />
-                <div className="w-full h-full flex items-center justify-center p-20 transform group-hover:scale-110 transition-transform duration-700">
-                   <dept.icon size={120} className="text-primary/20 group-hover:text-primary transition-colors duration-500" />
+                <div className="w-full h-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-700">
+                  {dept.image ? (
+                    <img 
+                      src={dept.image} 
+                      alt={dept.name} 
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="p-20">
+                      <dept.icon size={120} className="text-primary/20 group-hover:text-primary transition-colors duration-500" />
+                    </div>
+                  )}
                 </div>
                 {/* Float Badge */}
                 <div className="absolute top-8 left-8 bg-white/90 backdrop-blur px-6 py-3 rounded-2xl shadow-lg border border-white">
@@ -96,10 +107,6 @@ const Services = () => {
                    <Link to="/contact" className="btn-primary h-14 px-10 flex items-center shadow-primary/20">
                      Book Consultation
                    </Link>
-                   <button className="flex items-center space-x-2 text-slate-600 hover:text-primary font-bold transition-colors group">
-                      <span>View Gallery</span>
-                      <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
-                   </button>
                 </div>
               </div>
             </motion.div>
@@ -107,34 +114,63 @@ const Services = () => {
         </motion.div>
       </section>
 
-      {/* Trust Banner */}
-      <section className="bg-secondary-dark py-32 rounded-[5rem] mx-4 mb-20 shadow-2xl relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-        <div className="section-container relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
-            <div className="space-y-6 group">
-              <div className="w-20 h-20 bg-primary/20 rounded-3xl flex items-center justify-center text-primary mx-auto border border-primary/20 animate-bounce-slow">
-                <ShieldCheck size={40} />
+      {/* Trust Banner - Premium Light Version */}
+      <section className="relative py-30 mx-2 mb-10 overflow-hidden rounded-[5rem]">
+        {/* Soft Modern Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f79898] via-[#F0F7FF] to-[#f79898]" />
+        
+      {/* Content Container */}
+    <div className="section-container relative ">
+          <div className="text-center max-w-3xl mx-auto mb-24">
+            <span className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Modern Infrastructure</span>
+            <h2 className="text-4xl md:text-6xl font-black text-slate-900">Advanced Facilities for <br /><span className="text-primary">Better Healing.</span></h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+            
+            {/* Cashless Facility */}
+            <motion.div 
+              whileHover={{ y: -15, scale: 1.02 }}
+              className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+            >
+              <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center text-primary mx-auto mb-8 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                <ShieldCheck size={44} />
               </div>
-              <h3 className="text-2xl font-black text-white italic">Cashless Facility</h3>
-              <p className="text-gray-400">Collaborated with major TPAs and insurance providers for hassle-free treatment.</p>
-            </div>
-            <div className="space-y-6">
-              <div className="w-20 h-20 bg-primary/20 rounded-3xl flex items-center justify-center text-primary mx-auto border border-primary/20 animate-bounce-slow" style={{ animationDelay: '0.5s' }}>
-                <Zap size={40} />
+              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">Cashless Facility</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">Collaborated with major TPAs and insurance providers for hassle-free treatment.</p>
+            </motion.div>
+
+            {/* 24/7 Response */}
+            <motion.div 
+              whileHover={{ y: -15, scale: 1.02 }}
+              transition={{ delay: 0.1 }}
+              className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+            >
+              <div className="w-24 h-24 bg-blue-500/10 rounded-[2rem] flex items-center justify-center text-blue-600 mx-auto mb-8 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                <Zap size={44} />
               </div>
-              <h3 className="text-2xl font-black text-white italic">24/7 Response</h3>
-              <p className="text-gray-400">Our emergency and diagnostic units are fully functional around the clock.</p>
-            </div>
-            <div className="space-y-6">
-              <div className="w-20 h-20 bg-primary/20 rounded-3xl flex items-center justify-center text-primary mx-auto border border-primary/20 animate-bounce-slow" style={{ animationDelay: '1s' }}>
-                <ShieldCheck size={40} />
+              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">24/7 Response</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">Our emergency and diagnostic units are fully functional around the clock.</p>
+            </motion.div>
+
+            {/* Expert Board */}
+            <motion.div 
+              whileHover={{ y: -15, scale: 1.02 }}
+              transition={{ delay: 0.2 }}
+              className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+            >
+              <div className="w-24 h-24 bg-primary/10 rounded-[2rem] flex items-center justify-center text-primary mx-auto mb-8 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+                <ShieldCheck size={44} />
               </div>
-              <h3 className="text-2xl font-black text-white italic">Expert Board</h3>
-              <p className="text-gray-400">Multi-disciplinary team of highly qualified specialists for holistic care.</p>
-            </div>
+              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">Expert Board</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">Multi-disciplinary team of highly qualified specialists for holistic care.</p>
+            </motion.div>
+
           </div>
         </div>
+
+        {/* Decorative background shapes */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-full blur-3xl -z-0" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-blue-500/5 rounded-r-full blur-3xl -z-0" />
       </section>
     </div>
   );

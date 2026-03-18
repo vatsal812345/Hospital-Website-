@@ -33,6 +33,7 @@ export const departments = [
     id: 'physician',
     name: 'Physician Department',
     icon: Stethoscope,
+    image: '/7.jpg',
     description: 'Expert treatment for Malaria, Dengue, Typhoid, Diabetes, Blood Pressure, and Heart-related conditions.',
     features: ['Multi-para monitoring', 'Syringe pump facility', 'Nebulization services', 'Snake bite treatment']
   },
@@ -40,6 +41,7 @@ export const departments = [
     id: 'gynecology',
     name: 'Gynecology & Maternity',
     icon: Baby,
+    image: '/2.jpg',
     description: 'Comprehensive care for women including prenatal checkups (ANC), sonography, and normal/cesarean deliveries.',
     features: ['Modern Labor Room', 'High-risk pregnancy care', 'Infertility treatment', 'Hysterescopy & Laparoscopy']
   },
@@ -47,6 +49,7 @@ export const departments = [
     id: 'pediatrics',
     name: 'Pediatrics (Child Care)',
     icon: User,
+    image: '/3.jpg',
     description: 'Specialized care for newborns and children, including vaccination and phototherapy for jaundice.',
     features: ['Newborn jaundice treatment', 'Complete immunization', 'Nutritional guidance', 'Emergency pediatric care']
   },
@@ -54,6 +57,7 @@ export const departments = [
     id: 'orthopedic',
     name: 'Orthopedic Department',
     icon: Bone,
+    image: '/4.jpg',
     description: 'Advanced treatment for bone, joint, and muscle issues, including spine surgery and arthritis care.',
     features: ['Joint pain treatment', 'Fracture management', 'Spine care', 'Digital X-Rays']
   },
@@ -61,6 +65,7 @@ export const departments = [
     id: 'surgery',
     name: 'Surgical Department',
     icon: Scissors,
+    image: '/5.jpg',
     description: 'Expert surgical procedures for appendix, hernia, piles, stones, and accident-related emergencies.',
     features: ['Laparoscopic surgery', 'Endoscopic procedures', 'Emergency trauma surgery', 'Modern OT facility']
   },
@@ -68,6 +73,7 @@ export const departments = [
     id: 'diagnostics',
     name: 'Diagnostics & X-Ray',
     icon: Xray,
+    image: '/6.jpg',
     description: 'Precise diagnostic services including Digital X-Rays and basic laboratory tests.',
     features: ['Digital X-Rays', 'Basic pathology', 'Quick reports', 'Modern equipment']
   }
