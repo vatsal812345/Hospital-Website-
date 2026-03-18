@@ -66,7 +66,7 @@ const Home = () => {
                 <div className="flex -space-x-4">
                   {[1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-14 h-14 rounded-full border-4 border-white shadow-xl overflow-hidden bg-accent flex items-center justify-center">
-                       <Star size={18} className="text-primary opacity-30" />
+                        <Star size={18} className="text-primary opacity-30" />
                     </div>
                   ))}
                 </div>
@@ -119,6 +119,7 @@ const Home = () => {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border-2 border-primary/5 rounded-[6rem] -z-10 rotate-12" />
               </div>
             </motion.div>
+            
           </div>
         </div>
       </section>
