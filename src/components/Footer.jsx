@@ -28,13 +28,17 @@ const Footer = () => {
           
           {/* Column 1: Brand & Socials */}
           <div className="space-y-8">
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 bg-primary flex items-center justify-center rounded-xl shadow-lg shadow-primary/20 group-hover:rotate-12 transition-transform duration-300">
-                <span className="text-white font-bold text-3xl">+</span>
+            <Link to="/" className="flex items-center space-x-4 group">
+              <div className="relative w-14 h-14 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                <img 
+                  src="/10.png" 
+                  alt="AKLERA Logo" 
+                  className="w-full h-full object-contain filter drop-shadow-md brightness-110"
+                />
               </div>
-              <div className="flex flex-col text-left">
-                <span className="text-white font-extrabold text-2xl leading-none tracking-tight">AKLERA</span>
-                <span className="text-primary text-[10px] font-bold tracking-[0.2em] uppercase">Maternity Home</span>
+              <div className="flex flex-col text-left justify-center">
+                <span className="text-white font-extrabold text-3xl leading-none tracking-tight">AKLERA</span>
+                <span className="text-primary text-sm font-bold tracking-[0.1em] uppercase mt-0.5">Maternity Home</span>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm font-medium">
