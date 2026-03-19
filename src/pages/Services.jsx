@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { departments } from '../constants';
-import { CheckCircle, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { CheckCircle, ArrowRight, ShieldCheck, Zap, Bed, Users, Star } from 'lucide-react';
 
 const Services = () => {
   const containerVariants = {
@@ -148,8 +148,8 @@ const Services = () => {
               <div className="w-24 h-24 bg-blue-500/10 rounded-[2rem] flex items-center justify-center text-blue-600 mx-auto mb-8 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
                 <Zap size={44} />
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">24/7 Response</h3>
-              <p className="text-slate-600 leading-relaxed font-medium">Our emergency and diagnostic units are fully functional around the clock.</p>
+              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">24/7 Services</h3>
+              <p className="text-slate-600 leading-relaxed font-medium">Our emergency and diagnostic units are fully functional around the clock and 24/7 Medicine Availability.</p>
             </motion.div>
 
             {/* Expert Board */}
@@ -166,6 +166,56 @@ const Services = () => {
             </motion.div>
 
           </div>
+
+          {/* Patient Room Categories Section */}
+          <div className="mt-32">
+            <div className="text-center max-w-3xl mx-auto mb-20">
+              <span className="text-primary font-bold uppercase tracking-[0.3em] text-sm mb-4 block">Accommodation</span>
+              <h2 className="text-4xl md:text-6xl font-black text-slate-900">Patient Room <span className="text-primary">Categories</span></h2>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+              {/* General Ward */}
+              <motion.div 
+                whileHover={{ y: -15, scale: 1.02 }}
+                className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+              >
+                <div className="w-24 h-24 bg-green-500/10 rounded-[2rem] flex items-center justify-center text-green-600 mx-auto mb-8 border border-green-500/10 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                  <Users size={44} />
+                </div>
+                <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">General Ward</h3>
+                <p className="text-slate-600 leading-relaxed font-medium">Spacious and well-ventilated shared rooms with 24/7 nursing support and essential medical monitoring.</p>
+              </motion.div>
+
+              {/* Semi-Special */}
+              <motion.div 
+                whileHover={{ y: -15, scale: 1.02 }}
+                transition={{ delay: 0.1 }}
+                className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+              >
+                <div className="w-24 h-24 bg-blue-500/10 rounded-[2rem] flex items-center justify-center text-blue-600 mx-auto mb-8 border border-blue-500/10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                  <Bed size={44} />
+                </div>
+                <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">Semi-Special</h3>
+                <p className="text-slate-600 leading-relaxed font-medium">Semi-private rooms offering improved privacy, personalized attention, and attached washroom facilities.</p>
+              </motion.div>
+
+              {/* Deluxe Room */}
+              <motion.div 
+                whileHover={{ y: -15, scale: 1.02 }}
+                transition={{ delay: 0.2 }}
+                className="group p-12 bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[3.5rem] shadow-premium transition-all duration-500"
+              >
+                <div className="w-24 h-24 bg-yellow-500/10 rounded-[2rem] flex items-center justify-center text-yellow-600 mx-auto mb-8 border border-yellow-500/10 group-hover:bg-yellow-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                  <Star size={44} />
+                </div>
+                <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight ">Deluxe Room</h3>
+                <p className="text-slate-600 leading-relaxed font-medium">Premium private suites equipped with air conditioning, television, refrigerator, and dedicated attendant space.</p>
+              </motion.div>
+            </div>
+          </div>
+
+          
         </div>
 
         {/* Decorative background shapes */}
