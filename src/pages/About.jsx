@@ -106,7 +106,7 @@ const About = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {[
-            { name: "S. Raju", role: "Software Director", img: "/9 (2).jpeg" },
+            { name: "S. Raju", role: "Director", img: "/9 (2).jpeg" },
             { name: "P. Chandu Patel", role: "Director", img: "/9(4).jpeg" },
             { name: "Dr. Ramakrishna Anumandla", role: "CEO", img: "/9 (3).jpeg" },
             { name: "Adarsh Tiwari", role: "Admin", img: "/9 (1)(1).jpeg" },
