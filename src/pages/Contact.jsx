@@ -13,8 +13,38 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50/50 pt-32 pb-20">
-      <div className="section-container">
+    <div className="min-h-screen bg-slate-50/50 pb-20">
+      {/* Premium Header */}
+      <section className="relative pt-25 pb-15 overflow-hidden bg-accent-light">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f79898] via-[#F0F7FF] to-[#f79898]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--primary-light)_0%,_transparent_70%)] opacity-5" />
+        <div className="section-container relative z-10 text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-block px-6 py-2 bg-primary/10 text-primary rounded-full text-xs font-black uppercase tracking-[0.3em]"
+          >
+             Connect With Us
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-4xl md:text-7xl font-black text-slate-900 leading-none"
+          >
+            Get in <span className="text-primary ">Touch</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-slate-600 max-w-2xl mx-auto"
+          >
+             Have a specific health concern? Or need to book an appointment with our experts? Our team is available to provide you with medical support.
+          </motion.p>
+        </div>
+      </section>
+
+      <div className="section-container pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Side: Contact Info */}
@@ -24,15 +54,6 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="space-y-12"
           >
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 tracking-tight">
-                Get in <span className="text-primary italic">Touch</span>
-              </h2>
-              <p className="text-lg text-slate-600 leading-relaxed max-w-md">
-                Have a specific health concern? Or need to book an appointment with our experts? 
-                Our team is available to provide you with the medical support you need.
-              </p>
-            </div>
 
             <div className="space-y-8">
               {/* Phone */}

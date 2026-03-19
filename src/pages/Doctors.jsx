@@ -40,20 +40,34 @@ const Doctors = () => {
 
   return (
     <div className="flex flex-col">
-      {/* Header */}
-      <section className="pt-48 pb-32 bg-secondary-dark relative overflow-hidden text-center rounded-b-[5rem]">
-          <div className="absolute top-0 right-0 w-full h-full bg-primary/5 -skew-y-6 transform translate-y-1/2" />
-          <div className="section-container relative z-10 space-y-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="inline-block px-4 py-1.5 bg-primary rounded-full text-[10px] font-black italic text-white uppercase tracking-[0.3em]"
-            >
-              Excellence Since 2010
-            </motion.div>
-            <h1 className="text-5xl md:text-8xl font-black text-white leading-none">Medical <span className="text-primary italic">Board</span></h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">Meet the experts behind our compassionate healthcare services.</p>
-          </div>
+      {/* Premium Header */}
+      <section className="relative pt-25 pb-15 overflow-hidden bg-accent-light">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f79898] via-[#F0F7FF] to-[#f79898]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--primary-light)_0%,_transparent_70%)] opacity-5" />
+        <div className="section-container relative z-10 text-center space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-block px-6 py-2 bg-primary/10 text-primary rounded-full text-xs font-black uppercase tracking-[0.3em]"
+          >
+             Excellence Since 2010
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-4xl md:text-7xl font-black text-slate-900 leading-none"
+          >
+            Medical <span className="text-primary ">Board</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-slate-600 max-w-2xl mx-auto"
+          >
+             Meet the experts behind our compassionate healthcare services.
+          </motion.p>
+        </div>
       </section>
 
       {/* Team Grid */}
