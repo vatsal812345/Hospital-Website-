@@ -34,9 +34,11 @@ const Navbar = () => {
                 className="w-full h-full object-contain filter drop-shadow-md"
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-slate-900 font-extrabold text-3xl leading-none tracking-tight">AKLERA</span>
-              <span className="text-primary text-sm font-bold tracking-[0.1em] uppercase mt-0.5">Maternity Home</span>
+            <div className="flex flex-col items-center w-fit">
+              <span className="text-primary font-serif font-black text-2xl md:text-4xl leading-none tracking-tight text-center">AKLERA</span>
+              <div className="bg-gradient-to-r from-[#001F3F] to-primary px-3 py-1 rounded-full mt-1.5 shadow-sm w-full text-center">
+                <span className="text-white text-[8px] md:text-[10px] font-bold tracking-[0.2em] uppercase block">Hospital & Maternity Home</span>
+              </div>
             </div>
           </Link>
 

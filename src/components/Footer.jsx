@@ -37,8 +37,10 @@ const Footer = () => {
                 />
               </div>
               <div className="flex flex-col text-left justify-center">
-                <span className="text-white font-extrabold text-3xl leading-none tracking-tight">AKLERA</span>
-                <span className="text-primary text-sm font-bold tracking-[0.1em] uppercase mt-0.5">Maternity Home</span>
+                <span className="text-primary font-serif font-black text-2xl md:text-4xl leading-none tracking-tight text-center">AKLERA</span>
+                <div className="bg-gradient-to-r from-[#e7e9eb] to-white px-3 py-1 rounded-full mt-1 shadow-sm w-fit text-center">
+                  <span className="text-black text-[8px] md:text-[10px] font-bold tracking-[0.05em] uppercase block">Hospital & Maternity Home</span>
+                </div>
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm font-medium">

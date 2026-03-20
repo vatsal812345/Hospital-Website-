@@ -26,6 +26,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif', 'system-ui'],
         heading: ['Outfit', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
       },
       boxShadow: {
         'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',

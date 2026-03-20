@@ -110,7 +110,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-[2.5rem] shadow-premium p-8 md:p-12 border border-slate-100 relative overflow-hidden"
+            className="bg-white rounded-[2.5rem] shadow-premium p-6 md:p-12 border border-slate-100 relative overflow-hidden"
           >
             {submitted ? (
               <div className="py-20 text-center space-y-6">
@@ -209,7 +209,7 @@ const Contact = () => {
         ></iframe>
 
         {/* Map Overlay Card */}
-        <div className="absolute top-8 left-8 md:left-20 z-10 max-w-sm">
+        <div className="absolute top-8 left-4 md:left-10 lg:left-20 z-10 max-w-[calc(100%-2rem)] md:max-w-sm">
           <div className="bg-white p-8 rounded-[2rem] shadow-2xl border border-slate-100 space-y-4">
             <div className="flex items-center gap-3 text-primary">
               <div className="p-2 bg-primary/10 rounded-lg">

@@ -75,7 +75,7 @@ const Services = () => {
                     />
                   ) : (
                     <div className="p-20">
-                      <dept.icon size={120} className="text-primary/20 group-hover:text-primary transition-colors duration-500" />
+                      {dept.icon && <dept.icon size={120} className="text-primary/20 group-hover:text-primary transition-colors duration-500" />}
                     </div>
                   )}
                 </div>

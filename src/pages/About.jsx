@@ -89,9 +89,9 @@ const About = () => {
                 />
                
                {/* Stats Overlay */}
-                <div className="absolute -bottom-10 -left-15 glass-card p-10 rounded-[3rem] shadow-2xl border-red-300 border-[8px] animate-float">
-                  <div className="text-5xl font-black text-primary mb-2">10+</div>
-                  <div className="text-xs font-black uppercase tracking-widest text-slate-500 leading-none">Years Of excellence</div>
+                <div className="absolute -bottom-10 left-0 md:-left-10 lg:-left-15 glass-card p-8 md:p-10 rounded-[3rem] shadow-2xl border-red-300 border-[8px] animate-float">
+                  <div className="text-4xl md:text-5xl font-black text-primary mb-2">10+</div>
+                  <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 leading-none">Years Of excellence</div>
                 </div>
             </div>
           </motion.div>
@@ -128,9 +128,9 @@ const About = () => {
                   className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" 
                 />
               </div>
-              <div className="space-y-2 h-24 flex flex-col justify-start">
+              <div className="space-y-2 pb-4">
                 <h3 className="text-xl md:text-2xl font-black text-slate-900 tracking-tight leading-tight px-4">{member.name}</h3>
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mt-auto">{member.role}</p>
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">{member.role}</p>
               </div>
             </motion.div>
           ))}

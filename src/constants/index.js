@@ -10,7 +10,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  Clock
+  Clock,
+  Sparkles
 } from 'lucide-react';
 
 export const navigationLinks = [
@@ -76,6 +77,14 @@ export const departments = [
     image: '/6.jpg',
     description: 'Precise diagnostic services including Digital X-Rays and basic laboratory tests.',
     features: ['Digital X-Rays', 'Basic pathology', 'Quick reports', 'Modern equipment']
+  },
+  {
+    id: 'skin',
+    name: 'Skin Department',
+    icon: Activity,
+    image: '/11.png',
+    description: 'Expert treatment for all skin, hair, and nail conditions, including allergy and cosmetic concerns.',
+    features: ['Allergy treatment', 'Acne & Scar care', 'Hair fall treatment', 'Skin rejuvenation']
   }
 ];
 

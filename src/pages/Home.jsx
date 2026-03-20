@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-15 overflow-hidden bg-gradient-to-br from-white to-[#F0F7FF]">
+      <section className="relative min-h-[90vh] flex items-center pt-20 lg:pt-28 pb-16 lg:pb-0 overflow-hidden bg-gradient-to-br from-white to-[#F0F7FF]">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 rounded-l-[20rem] -z-0 hidden lg:block" />
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-0" />
@@ -129,7 +129,7 @@ const Home = () => {
         <div className="section-container !py-0">
           <div className="bg-white p-2 rounded-[3rem] shadow-2xl border border-gray-50 flex flex-wrap lg:flex-nowrap">
             {quickStats.map((stat, idx) => (
-              <div key={idx} className={`flex-1 min-w-[200px] p-10 flex flex-col items-center justify-center text-center ${idx < quickStats.length - 1 ? 'border-r border-gray-100' : ''}`}>
+              <div key={idx} className={`flex-1 min-w-[200px] p-10 flex flex-col items-center justify-center text-center border-b border-gray-100 last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0`}>
                 <div className="text-4xl font-black text-primary mb-2">{stat.value}</div>
                 <div className="text-xs font-bold uppercase tracking-widest text-slate-500">{stat.label}</div>
               </div>
@@ -177,7 +177,7 @@ const Home = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
           {departments.map((dept) => (
-            <motion.div key={dept.id} variants={fadeInUp} className="premium-card group cursor-pointer">
+            <motion.div key={dept.id} variants={fadeInUp} className="premium-card group cursor-pointer flex flex-col h-full">
               <div className="w-20 h-20 bg-accent rounded-3xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 transform group-hover:rotate-[10deg]">
                 <dept.icon size={40} />
               </div>
@@ -185,10 +185,10 @@ const Home = () => {
               <p className="text-slate-600 leading-relaxed mb-8 opacity-90">
                 {dept.description}
               </p>
-              <div className="flex items-center space-x-2 text-primary font-bold uppercase tracking-widest text-xs group-hover:translate-x-2 transition-transform duration-300">
+              <Link to="/services" className="flex items-center space-x-2 text-primary font-bold uppercase tracking-widest text-xs group-hover:translate-x-2 transition-transform duration-300 whitespace-nowrap mt-auto">
                 <span>Explore Department</span>
                 <ArrowRight size={14} />
-              </div>
+              </Link>
             </motion.div>
           ))}
         </motion.div>

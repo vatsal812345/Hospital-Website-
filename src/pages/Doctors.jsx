@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Doctors = () => {
   const doctors = [
     {
-      name: "Dr. K. Rathore",
+      name: "Dr. K. Rathor",
       specialty: "General Physician & Critical Care",
       education: "MBBS, MD",
       experience: "15+ Years",
@@ -83,24 +83,11 @@ const Doctors = () => {
               className="group"
             >
               {/* Profile Image Area */}
-              <div className="relative aspect-[3/4] bg-accent rounded-[2.5rem] overflow-hidden shadow-2xl border-[12px] border-white group-hover:-translate-y-4 transition-all duration-500">
-                <div className="w-full h-full flex items-center justify-center bg-accent-light p-12">
+              <div className="relative aspect-[3/4] bg-accent rounded-[2.5rem] overflow-hidden shadow-xl border-[12px] border-white transition-all duration-500">
+                <div className="w-full h-full flex items-center justify-center bg-accent-light p-12 overflow-hidden">
                    <User size={120} className="text-primary/10 group-hover:scale-110 transition-transform duration-700" />
                 </div>
                 
-                {/* Social Overlay */}
-                <div className="absolute inset-0 bg-primary/80 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                   <a href="#" className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
-                      <Instagram size={24} />
-                   </a>
-                   <a href="#" className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
-                      <Facebook size={24} />
-                    </a>
-                    <a href="#" className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary hover:scale-110 transition-transform">
-                      <Twitter size={24} />
-                    </a>
-                </div>
-
                 {/* Experience Badge */}
                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur px-4 py-2 rounded-xl border border-white shadow-lg">
                     <div className="flex items-center space-x-2">
@@ -111,17 +98,23 @@ const Doctors = () => {
               </div>
 
               {/* Info Area */}
-              <div className="mt-8 text-center space-y-2">
-                <h3 className="text-2xl font-black text-slate-800 group-hover:text-primary transition-colors">{doc.name}</h3>
-                <p className="text-sm font-bold text-primary italic uppercase tracking-widest">{doc.specialty}</p>
+              <div className="mt-8 text-center space-y-3">
+                <div className="space-y-1">
+                  <h3 className="text-2xl font-black text-slate-800 transition-colors">{doc.name}</h3>
+                  <div className="min-h-[3rem] flex items-center justify-center">
+                    <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] leading-tight">
+                      {doc.specialty}
+                    </p>
+                  </div>
+                </div>
                 
-                <div className="pt-4 flex flex-col items-center space-y-4">
-                  <div className="flex items-center space-x-4 text-xs font-bold text-slate-500 bg-accent px-6 py-2 rounded-full uppercase tracking-tighter">
-                      <span className="flex items-center"><Star size={12} className="mr-1 text-primary" /> 4.9 Rating</span>
-                      <span className="w-1 h-1 bg-gray-300 rounded-full" />
+                <div className="flex flex-col items-center gap-6 pt-2">
+                  <div className="flex items-center space-x-4 text-[10px] font-black text-slate-500 bg-accent px-5 py-2.5 rounded-full uppercase tracking-widest border border-slate-100">
+                      <span className="flex items-center"><Star size={12} className="mr-1.5 text-primary" /> 4.9 Rating</span>
+                      <span className="w-1 h-1 bg-slate-300 rounded-full" />
                       <span>{doc.experience}</span>
                   </div>
-                  <Link to="/contact" className="btn-primary h-12 px-8 flex items-center !shadow-none group-hover:!shadow-lg transition-all opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 duration-500">
+                  <Link to="/contact" className="btn-primary h-12 px-10 flex items-center shadow-lg hover:shadow-primary/30 transition-all duration-300">
                       Book Visit
                   </Link>
                 </div>
