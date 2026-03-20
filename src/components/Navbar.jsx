@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
-import { navigationLinks } from '../constants';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { navigationLinks, contactInfo } from '../constants';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,30 +76,58 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`lg:hidden fixed inset-0 top-[88px] bg-white/95 backdrop-blur-2xl transition-all duration-500 z-50 ${
-        isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10 pointer-events-none'
+      <div className={`lg:hidden fixed inset-0 z-50 bg-white transition-all duration-500 transform ${
+        isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
       }`}>
-        <div className="px-6 py-10 space-y-6">
-          {navigationLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsOpen(false)}
-              className={`block text-2xl font-bold transition-all ${
-                location.pathname === link.path ? 'text-primary translate-x-4' : 'text-slate-900 hover:text-primary'
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="pt-10">
-            <Link
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-              className="btn-primary w-full text-center py-5 text-xl block shadow-2xl shadow-primary/20"
-            >
-              Book Appointment
-            </Link>
+        <div className="flex flex-col h-full">
+          {/* Mobile Menu Header - match Navbar height */}
+          <div className={`flex items-center justify-between px-6 border-b border-slate-100 transition-all duration-500 ${
+            scrolled ? 'h-[72px]' : 'h-[100px]'
+          }`}>
+             <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center space-x-3">
+                <img src="/10.png" alt="Logo" className="w-10 h-10 object-contain" />
+                <span className="text-primary font-serif font-black text-xl uppercase tracking-tighter">AKLERA</span>
+             </Link>
+             <button
+                onClick={() => setIsOpen(false)}
+                className="p-2 text-slate-900 bg-accent rounded-xl"
+              >
+                <X size={28} />
+              </button>
+          </div>
+
+          <div className="flex-1 overflow-y-auto px-6 py-4">
+            <div className="flex flex-col">
+              {navigationLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`py-5 border-b border-slate-100 text-lg font-medium transition-all ${
+                    location.pathname === link.path 
+                    ? 'text-primary' 
+                    : 'text-slate-700'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 space-y-6 pb-10">
+              <div className="flex items-center gap-3 text-slate-700">
+                <Phone size={20} className="text-primary" />
+                <span className="text-lg font-medium">Call Us: {contactInfo.phones[0]}</span>
+              </div>
+
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="w-full bg-[#8B0000] hover:bg-[#A00000] text-white font-bold py-4 rounded-lg text-center block text-lg shadow-lg"
+              >
+                Book Appointment
+              </Link>
+            </div>
           </div>
         </div>
       </div>
