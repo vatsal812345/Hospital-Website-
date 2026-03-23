@@ -4,12 +4,55 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        setError(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Failed to connect to the server. Please check your connection.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -134,6 +177,9 @@ const Contact = () => {
                     <input 
                       required
                       type="text" 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
                       placeholder="e.g. John" 
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
                     />
@@ -143,6 +189,9 @@ const Contact = () => {
                     <input 
                       required
                       type="text" 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
                       placeholder="e.g. Doe" 
                       className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-slate-900 focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
                     />
@@ -154,6 +203,9 @@ const Contact = () => {
                   <input 
                     required
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="your@email.com" 
                     className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-secondary-dark focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
                   />
@@ -164,6 +216,9 @@ const Contact = () => {
                   <input 
                     required
                     type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="+91 XXXXX XXXXX" 
                     className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-secondary-dark focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none"
                   />
@@ -173,17 +228,33 @@ const Contact = () => {
                   <label className="text-xs font-bold uppercase tracking-wider text-slate-500 ml-1">Message</label>
                   <textarea 
                     rows="4" 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder="How can we help you?" 
                     className="w-full bg-slate-50 border border-slate-200 rounded-[1.5rem] px-5 py-4 text-secondary-dark focus:border-primary focus:ring-4 focus:ring-primary/5 transition-all outline-none resize-none"
                   ></textarea>
                 </div>
 
+                {error && (
+                  <div className="bg-red-50 text-red-500 p-4 rounded-xl text-sm font-medium border border-red-100 italic">
+                    {error}
+                  </div>
+                )}
+
                 <button 
                   type="submit" 
-                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20"
+                  disabled={loading}
+                  className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-primary/20 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send size={20} />
-                  Send Message
+                  {loading ? (
+                    <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             )}
